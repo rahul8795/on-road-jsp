@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        Feedback Form
+    </title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!--<link rel="stylesheet" href="/path/to/font-awesome.min.css">-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Alegreya:400,400i,500,500i|IBM+Plex+Mono:300i,400,400i,700,700i|IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,100i,400,400i,500,500i,700,700i|IBM+Plex+Serif:400,400i|Merriweather|Merriweather+Sans|Montserrat|Nanum+Myeongjo:400,700,800|Nunito|Nunito+Sans:400,400i|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab&amp;subset=latin-ext"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/simple-rating.css">
+    <script src="js/simple-rating.js"></script>-->
+    <link rel="stylesheet" href="assets/styles/style.css">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|IBM+Plex+Mono:400,400i|IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i|IBM+Plex+Serif:400,400i|Merriweather|Merriweather+Sans|Montserrat|Nanum+Myeongjo|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab');
+        * {
+            font-family: 'Quattrocento Sans', sans-serif;
+        }
+
+        @import "@material/form-field/mdc-form-field";
+        @import "@material/radio/mdc-radio";
+
+        .mdc-radio {
+            width: 50px;
+            height: 50px;
+        }
+
+        .mdc-radio__outer-circle {
+            width: 50px;
+            height: 50px;
+            margin: 10px
+        }
+
+        .mdc-radio__native-control {
+            width: 50px;
+            height: 50px;
+        }
+        .nav {
+            z-index: 2;
+            background-color:#36648B;
+        }
+        
+        body
+        {
+            background-image: url("images/bgimagereal.png") ; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+       
+    </style>
+    <script type="text/javascript">
+        // import { MDCFormField } from '@material/form-field';
+        // import { MDCRadio } from '@material/radio';
+
+        // const radio = new MDCRadio(document.querySelector('.mdc-radio'));
+        //  const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
+        //  formField.input = radio;
+
+        function showText() {
+            if (document.getElementById("radio1").checked == true) {
+                //alert("calling");
+               // document.getElementById("showFeedback").style.padding="8";
+                document.getElementById("show").style.color = "#ff0022";
+                document.getElementById("show").innerHTML = "very bad";
+                document.getElementById("radio_action").innerHTML = "&#128545";
+                document.getElementById("no1").style.backgroundColor="#ff0022";
+                document.getElementById("one").style.color="white";
+                document.getElementById("no2").style.backgroundColor=null;
+                document.getElementById("two").style.color="black";
+                document.getElementById("no3").style.backgroundColor=null;
+                document.getElementById("three").style.color="black";
+                document.getElementById("no4").style.backgroundColor=null;
+                document.getElementById("fourth").style.color="black";
+                document.getElementById("no5").style.backgroundColor=null;
+                document.getElementById("fifth").style.color="black";
+                
+            }
+            else if (document.getElementById("radio-2").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#00BFFF";
+                document.getElementById("show").innerHTML = "bad";
+                document.getElementById("radio_action").innerHTML = "&#128546";
+                document.getElementById("no2").style.backgroundColor="#00BFFF";
+                document.getElementById("two").style.color="white";
+                document.getElementById("no1").style.backgroundColor=null;
+                document.getElementById("one").style.color="black";
+                document.getElementById("no3").style.backgroundColor=null;
+                document.getElementById("three").style.color="black";
+                document.getElementById("no4").style.backgroundColor=null;
+                document.getElementById("fourth").style.color="black";
+                document.getElementById("no5").style.backgroundColor=null;
+                document.getElementById("fifth").style.color="black";
+            }
+            else if (document.getElementById("radio-3").checked == true) {
+                //  alert("calling");
+                document.getElementById("show").style.color = "#FFD700";
+                document.getElementById("show").innerHTML = "average";
+                document.getElementById("radio_action").innerHTML = "&#128533";
+                document.getElementById("no3").style.backgroundColor="#FFD700";
+                document.getElementById("three").style.color="white";
+                document.getElementById("no2").style.backgroundColor=null;
+                document.getElementById("two").style.color="black";
+                document.getElementById("no1").style.backgroundColor=null;
+                document.getElementById("one").style.color="black";
+                document.getElementById("no4").style.backgroundColor=null;
+                document.getElementById("fourth").style.color="black";
+                document.getElementById("no5").style.backgroundColor=null;
+                document.getElementById("fifth").style.color="black";
+            }
+            else if (document.getElementById("radio-4").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#00FF00";
+                document.getElementById("show").innerHTML = "good";
+                document.getElementById("radio_action").innerHTML = "&#128512";
+                document.getElementById("no4").style.backgroundColor="#00FF00";
+                document.getElementById("fourth").style.color="white";
+                document.getElementById("no2").style.backgroundColor=null;
+                document.getElementById("two").style.color="black";
+                document.getElementById("no3").style.backgroundColor=null;
+                document.getElementById("three").style.color="black";
+                document.getElementById("no1").style.backgroundColor=null;
+                document.getElementById("one").style.color="black";
+                document.getElementById("no5").style.backgroundColor=null;
+                document.getElementById("fifth").style.color="black";
+            }
+            else if (document.getElementById("radio-5").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#006400";
+                document.getElementById("show").innerHTML = "verygood";
+                document.getElementById("radio_action").innerHTML = "&#129321";
+                document.getElementById("no5").style.backgroundColor="#006400";
+                document.getElementById("fifth").style.color="white";
+                document.getElementById("no2").style.backgroundColor=null;
+                document.getElementById("two").style.color="black";
+                document.getElementById("no3").style.backgroundColor=null;
+                document.getElementById("three").style.color="black";
+                document.getElementById("no4").style.backgroundColor=null;
+                document.getElementById("fourth").style.color="black";
+                document.getElementById("no1").style.backgroundColor=null;
+                document.getElementById("one").style.color="black";
+            }/*
+            else if (document.getElementById("radio-6").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#0000FF";
+                document.getElementById("show").innerHTML = "could be better";
+                document.getElementById("radio_action").innerHTML = "&#128552	";
+            }
+            else if (document.getElementById("radio-7").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#1E90FF";
+                document.getElementById("show").innerHTML = "happy";
+                document.getElementById("radio_action").innerHTML = "&#128528";
+            }
+            else if (document.getElementById("radio-8").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#00FF7F";
+                document.getElementById("show").innerHTML = "very happy";
+                document.getElementById("radio_action").innerHTML = "&#128522";
+            }
+            else if (document.getElementById("radio-9").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#00FF00";
+                document.getElementById("show").innerHTML = "Excellent";
+                document.getElementById("radio_action").innerHTML = "&#128512";
+            }
+            else if (document.getElementById("radio-10").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#006400";
+                document.getElementById("show").innerHTML = "oustanding";
+                document.getElementById("radio_action").innerHTML = "&#129321";
+            }
+            */
+        }
+            /*
+                &#128544;
+                &#128533;
+                &#128528;
+                &#128521;
+                &#128513;
+            */
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="navigation">
+            <div class=" check  p-4">
+                <nav  style="backface-visibility: hidden" class="nav  justify-content fixed-top p-2">
+                    <a class=" navbar-brand text-sm-center nav-link " href="#">
+                        <img src="assets/images/logo.jpg" width="30" height="30" class="d-inline-block align-top"> On Road Assistance</a>
+                    <a class=" text-sm-right nav-link" href="#">Login</a>
+                    <a class=" text-sm-right nav-link active" href="#">SignUp</a>
+                    <a class=" text-sm-right nav-link" href="#" tabindex="-1">Help</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-4 p-4" >
+        <div class="row">
+            
+            <div class="col-lg-2 col-xl-2 col-md-2"></div>
+            <div class="col-8">
+                <div class="mdc-card p-5" style="border-radius: 25px">
+                    <p style="font-weight: bold" class="display-4">Feedback Form</p>
+                    <form>
+                        
+                        <input class="form-control mt-2" placeholder="Enter Your Email Id">
+                        <h6 class="mt-3" style="font-weight: bold;text-align: left">Are You Happy With Our Service</h6>
+
+                       
+                        
+                                <div class="p-1" id="showFeedback" style="text-align: center">
+                                        <span id="radio_action" style="font-size:40px;"></span>
+                                        <p style="font-weight: bolder" id="show"></p>
+                                        </div>
+                           
+                        <div class="mdc-card p-2  bg-light">
+                            <div class=" bg-light" style="display: -webkit-inline-box;">
+                                  
+                                <div class="container"  >
+                                       
+                                    <div class="row">
+                                            <div class="col-lg-1 col-md-3 col-sm-6"></div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio border border-secondary" id="no1">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio1" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background " style ="text-align: center ">
+                                                    <p id="one">1</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio border border-secondary" id="no2">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-2" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background" style ="text-align: center ">
+                                                    <p id="two">2</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                        
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio border border-secondary" id="no3">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-3" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background" style ="text-align: center ">
+                                                    <p id="three">3</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio border border-secondary" id="no4">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-4" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background" style ="text-align: center ">
+                                                    <p id="fourth">4</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio border border-secondary" id="no5">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-5" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background" style ="text-align: center ">
+                                                    <p id="fifth">5</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <!--
+                                <div class="row">
+                                        <div class="col-lg-1 col-md-3 col-sm-6"></div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-6" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background" style ="text-align: center ">
+                                                    <p>6</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-7" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background" style ="text-align: center ">
+                                                    <p>7</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-8" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background" style ="text-align: center ">
+                                                    <p>8</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-9" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background" style ="text-align: center ">
+                                                    <p>9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-10" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background" style ="text-align: center ">
+                                                    <p>10</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                -->
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="mdc-card mt-2 p-1 md-select">
+                            <select class="form-control mt-3" aria-placeholder="Type of Suggestion">
+                                <option>Suggestion</option>
+                                <option>Enquiry</option>
+                                <option>Complaint</option>
+                            </select>
+                            <h6 style="font-weight: bold;text-align: left" class="mt-4">Write Your Sugggestion/Query/Complaint</h6>
+                            <div class="mdc-text-field mdc-text-field--textarea form-field m-2">
+                                <textarea id="textarea" class="p-2 mdc-text-field__input" placeholder="Enter Your Query/Suggestion/Complaint" rows="4" cols="40"></textarea>
+                                <div class="mdc-notched-outline">
+                                    <div class="p-2  mdc-notched-outline__leading"></div>
+                                    <div class="  mdc-notched-outline__notch">
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdc-button mdc-button--unelevated mdc-button--outlined shadow-sm mt-2">Submit</div>
+                    </form>
+                </div>
+            </div>
+            
+            <!--<div class=" col-lg-3 col-xl-3 col-md-3"></div>-->
+            <div class="col-lg-2 col-xl-2 col-md-2"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
